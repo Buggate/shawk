@@ -1,0 +1,27 @@
+
+<p>
+   
+    <%= f.text_field(:group_id, :value => @group.id) %>
+</p>
+
+<p>
+   
+    <%= f.text_field(:host_id, :value => @group.party.user_id) %>
+</p>
+
+
+<div class="form-group">
+
+   
+    
+    	<%= f.label :guest_email %>
+
+    	
+   		 <%= f.email_field :email %>
+ 
+   
+</div><br>
+
+ <div class="form-group">
+    <%= f.submit 'Invite a Guest' %>
+ </div>

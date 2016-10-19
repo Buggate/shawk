@@ -1,0 +1,41 @@
+
+  
+  
+  <div class="field">
+
+   <p>
+
+     <%= f.hidden_field :group_id, :value => @visitor.group.id %>
+
+   </p>
+
+    <p>
+
+   <%= f.label "", :value => @visitor.user.name %>
+   <%= f.hidden_field :name, :value => @visitor.user.name %>
+
+   </p>
+
+  </div>
+  <div class="field">
+   <p>
+      <%= label_tag 'rsvp_accept', 'Accept' %>
+      <%= check_box_tag 'reservation[rsvp][]', 'Accept', id: 'rsvp_accept' %>   
+
+
+      
+      <%= label_tag 'rsvp_decline', 'Decline' %>
+      <%= check_box_tag 'reservation[rsvp][]', 'Decline', id: 'rsvp_decline' %>
+   </p>
+   </div>
+
+   
+
+
+  
+   <br>
+   <p>
+   <%= f.submit %>
+   </p>
+
+

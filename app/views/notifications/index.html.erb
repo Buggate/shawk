@@ -1,0 +1,26 @@
+
+
+       <% @notifications.each do |notice| %>
+
+         <div class="page_wrapper">
+
+           <div style="border-bottom: 1px solid lightgrey; padding-bottom: 0.5em">
+
+                <h4 class="guest"><%= notice.visitor.user.name  %></h4>
+
+                <h4 class="host"><%= notice.group.party.user.name %> Sents you an I.V </h4>
+          	   	
+          	   	<h4 class="party">to his Party - (<%= notice.group.party.title  %>)</h4>
+
+                <h5> <%= link_to "Accept", visitor_path(:id => notice.visitor.id, :group_id => notice.group.id) %> </h5>
+
+          	   
+      	   	 
+         </div>
+     	
+    <% end %>
+
+ 
+<br>  
+
+ 

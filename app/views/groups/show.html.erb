@@ -1,0 +1,74 @@
+<div id="page_wrapper">
+
+  <h2><%= link_to "mY HomePage", profiles_path  %></h2>
+
+
+  <div id="page_wrapper">
+  <div class="groups show">
+     <h4><b><%= "#{@group.name}" %></b></h4><br>
+
+
+<b>Host</b> &nbsp <%= @group.party.user.name %> &nbsp | &nbsp
+ <b>Party</b> &nbsp <%= @group.party.title %>
+
+     
+
+  
+
+
+
+
+
+<div id=" R S V P">
+
+       <% if !user_signed_in? %>
+
+          <h5><b>R S V P</b></h5>
+
+        
+
+      <% else  %>
+
+      <div id="page_wrapper">
+
+         <% @page_title = "Show Group" %>
+
+         <h2><%= link_to("Invite Guests", {:controller => 'invites', :action => 'index', :group_id => @group.id}, :class => 'action new') %></h2>
+
+  </div>
+       
+        
+         <h5><%= link_to("#{@group.reservations.count} R S V P", reservations_path)  %><%= render @group.reservations %></h5>
+
+             
+
+ 
+
+      <% end %>
+</div>
+
+
+
+
+
+ <div id="comments">
+
+    <h5><%= @group.comments.count %><b> Comments</b></h5>
+
+        <%= render "comments/group_form" %>
+
+        <%= render @group.comments %>
+
+     
+
+ 
+
+  
+
+
+</div>
+
+
+</div>
+
+

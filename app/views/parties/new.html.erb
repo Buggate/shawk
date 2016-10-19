@@ -1,0 +1,19 @@
+<div id="page_wrapper">
+
+	<%= link_to("<< My Parties", {:action => 'index', :user_id => current_user.id}, :class => 'back-link') %>
+
+	<div class="party new">
+
+        <h1>New party</h1>
+
+          <%= form_for(:party, :url => {:action => 'create', :user_id => current_user.id}) do |f| %>
+
+           <%= render(:partial => "form", :locals => {:f => f}) %>
+
+      <% end %>
+  </div>
+
+
+
+
+</div>

@@ -1,0 +1,13 @@
+<div id="page_wrapper">
+
+
+    <div class="rsvp">
+ 
+ <%= form_for(:reservation, :url => {:action => 'create', :visitor_id => @visitor.id, :group_id => @visitor.group.id}) do |f| %>
+ <%= render(:partial => "form", :locals => {:f => f}) %>
+
+
+
+ <% end %>
+
+</div>

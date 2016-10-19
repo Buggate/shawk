@@ -1,0 +1,28 @@
+   <%= link_to("<< Back to Parties", {:controller => 'parties', :action => 'index'}, :class => 'back-link') %>
+
+   
+
+       <% @groups.each do |group| %>
+
+         <div class="page_wrapper">
+
+           <div style="border-bottom: 1px solid lightgrey; padding-bottom: 0.5em">
+
+                <h4 class="host"><%= group.party.user.name %></h4>
+          	   	<h4 class="party"><%= group.party.title if group.party %></h4>
+          	   	<h2 class="name"><%= group.name  %></h2>
+
+          	   	<p class="date"><%= group.created_at.strftime("%B, %d, %Y") %></p>
+
+      	   	  
+               <%= link_to("#{group.name} - Guest I.V ", {:action => 'show', :id => group.id, :party_id => @party.id}, :class => 'action show') %>
+              
+         </div>
+     	
+    <% end %>
+
+ 
+<br>  
+
+  <%= link_to("Create a Group", {:action => 'new', :party_id => @party.id}, :class => 'action new') %>
+

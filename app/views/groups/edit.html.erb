@@ -1,0 +1,17 @@
+<div id="page_wrapper">
+
+	<%= link_to("<< #{@group.name}", {:action => 'index', :party_id => @party.id}, :class => 'back-link') %>
+
+
+<h1>Edit Group</h1>
+
+
+
+ <%= form_for(:group, :url => {:action => 'update', :id => @group.id, :party_id => @party.id}) do |f| %>
+
+
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+
+ <% end %>
+
+</div>

@@ -1,0 +1,67 @@
+<div id="page_wrapper">
+
+  <h2><%= link_to "mY HomePage", profiles_path  %></h2>
+
+
+  <div id="page_wrapper">
+
+      <div class="groups show">
+
+         <h4><b><%= "#{@visitor.group.name}" %></b></h4><br>
+
+
+          <b>Host</b> &nbsp <%= @visitor.group.party.user.name %> &nbsp | &nbsp
+           <b>Party</b> &nbsp <%= @visitor.group.party.title %>
+
+       </div>
+
+        <div id=" R S V P">
+
+               <% if @reservation.exists? %>
+
+                 <h5><b><%= link_to "R S V P", new_reservation_path(:visitor_id => @visitor.id)  %></b></h5>
+
+                 
+
+                <% else %>
+
+               
+
+
+                <% end %>
+
+              
+
+            
+        </div>
+             
+              
+   <div id="page_wrapper">
+
+
+
+
+   <h5><%= @visitor.group.comments.count %><b> Comments</b></h5>
+
+        <%= render "comments/visitor_form" %>
+
+        <%= render @visitor.group.comments %>
+      
+
+         
+
+
+        
+            
+
+     
+
+       </div>
+
+
+</div>
+
+
+</div>
+
+

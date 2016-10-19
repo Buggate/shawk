@@ -1,0 +1,34 @@
+
+
+<h1>Parties</h1>
+
+
+
+<% @parties.each do |party| %>
+<div id="page_wrapper">
+  <div style="border-bottom: 1px solid lightgrey; padding-bottom: 0.5em">
+
+
+  	 <figure>
+	   <div>
+	     <%= image_tag party.picture.url(:medium) %>
+	   </div>
+	   <h3><%= link_to (party.title), party %></h3>
+     </figure>
+    <p>
+      at <b><%= party.venue %></b><br>
+
+     <b>for<%= party.user.name %></b>
+     
+    </p>
+
+    <br>
+   
+
+     <%= link_to("Groups", {:controller => 'groups', :party_id => party.id} ) %> 
+       
+<% end %>
+
+<br>
+<%= link_to 'New party', new_party_path %>
+

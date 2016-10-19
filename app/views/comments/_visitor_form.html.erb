@@ -1,0 +1,32 @@
+
+<%= form_for([@visitor, @comment, @visitor.comments.build]) do |f| %>
+  
+
+    <p>
+
+   <%= f.hidden_field :visitor_id, :value => @visitor.id %>
+
+   </p>
+
+    <p>
+    
+         <%= f.hidden_field :group_id, :value => @visitor.group.id %>
+
+   </p>
+
+   
+   <p>
+   <%= f.hidden_field :name, :value => @visitor.user.name %>
+   <%= f.label "", @visitor.user.name %>
+   <%= f.text_area :body %>
+
+   </p>
+   <br>
+  <p>
+   <%= f.submit %>
+   </p>
+
+
+   <% end %>
+
+

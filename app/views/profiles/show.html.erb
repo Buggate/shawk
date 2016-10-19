@@ -1,0 +1,49 @@
+
+<div class="new_profile">
+
+<%= link_to "mY Home Page", profiles_path, :id => @profile.id %>
+
+</div>
+
+
+
+   
+
+   
+
+
+<div id="page_wrapper">
+  <div class="Profile show">
+     <h2> My Profile </h2>
+  <div>
+     <%= image_tag @profile.image.url(:medium) %>
+  </div>
+     <table summary="Profile detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @profile.name %></td>
+    </tr>
+     <tr>
+      <th>Username</th>
+      <td><%= @profile.username %></td>
+    </tr>
+    <tr>
+      <th>Bio Details</th>
+      <td><%= @profile.bio %></td>
+    </tr>
+    
+  </table><br>
+
+  </div>
+
+
+
+
+
+
+
+ 
+ 
+
+</div>
+
