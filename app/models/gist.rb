@@ -2,11 +2,12 @@ class Gist < ApplicationRecord
 
   
 
-	belongs_to :group
 
-	belongs_to :profile
+	# belongs_to :profile
 
-	belongs_to :visitor
+	belongs_to :visitor, optional: true
+
+	belongs_to :party, optional: true
 
 
 

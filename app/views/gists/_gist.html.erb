@@ -4,10 +4,10 @@
 		 <div class="gist_content">
 
 
-				<%= image_tag(gist.user.profile.image.url(:thumb)) %>
+				<p><%= gist.owner %></p>
 	   
 
-		 	   <%= image_tag(gist.image.url(:large)) %>
+		 	   <%= image_tag(gist.image.url(:large)) %><br>
 
 			 				 	
 			<%= gist.caption %>

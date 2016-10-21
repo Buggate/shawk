@@ -1,4 +1,9 @@
 
+
+
+
+
+
 <div id="party">
 <h1 class="title">
 	<%= @party.title %>
@@ -28,5 +33,22 @@
 
 
 <%= link_to 'My Party', parties_path %>
+
+
+ <div id="gists">
+
+        <%= render "gists/party_form" %>
+
+        <%= render @party.gists %>
+
+     
+
+ 
+
+  
+
+
+</div>
+
 
 

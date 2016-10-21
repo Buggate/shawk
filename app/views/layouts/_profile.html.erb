@@ -98,7 +98,23 @@
 
 								          <br>
 
-								          <div><%=link_to("#{@profile.user.visitors.count} - Party Invitations" , visitors_path) %> </div><br>
+
+								        <!--  <div><%=link_to("#{@profile.user.visitors.count} - Party Invitations" , visitors_path) %> </div><br> -->
+
+
+								          <p><%= link_to "mYParties", parties_path %></p> <br>
+
+
+
+											
+
+                                            <h4> Guest Lists </h4>
+											<select email="invite_email">
+										      <%= @profile.user.sent_invites.each do |invite| %>
+										        <option value="<%= invite.email %>"><%= invite.email %></option>
+										      <% end %>
+										    </select>
+
 
 								        
 
@@ -106,7 +122,7 @@
 					       <% end %>
 
                    
-					        <%= render :partial => 'gists/form' %> 
+					        
 					    
 				 		</div>
 					</div>

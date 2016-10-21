@@ -17,9 +17,9 @@ Rails.application.routes.draw do
  
   resources :parties do
 
-    resources :gists
+  resources :gists
 
-  end
+end
 
   resources :profiles 
 
@@ -44,7 +44,6 @@ Rails.application.routes.draw do
   resources :reservations
 
 
- resources :gists
 
 
   

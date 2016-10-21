@@ -1,0 +1,37 @@
+
+
+<div id="party">
+<h1 class="title">
+  <%= @visitor.party.title %>
+</h1>
+
+<h4><%= @visitor.party.venue %></h4>
+
+ <p>
+    <%= @visitor.party.user.name %>
+  </p>
+
+</p>
+
+</p>
+
+<br>
+
+
+ <div id="gists">
+
+        <%= render "gists/visitor_form" %>
+
+        <%= render @visitor.party.gists %>
+
+     
+
+ 
+
+  
+
+
+</div>
+
+
+

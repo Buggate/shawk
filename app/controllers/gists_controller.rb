@@ -3,41 +3,30 @@ class GistsController < ApplicationController
 
   before_action :find_party
 
-
-  def index
-     
-     @gist = @party.gists
-
-  end
-
-  #def new
+  before_action :find_visitor
 
 
-   # @gist = current_user.gists.build(:user_id => current_user.id)
+ def create
 
+    if @party != nil
 
-  #end
-
-
-  def create
-
-     @gist = @party.gists.build(gist_params) 
+       @gist = @party.gists.build(gist_params) 
    
+        @gist.save
 
+        redirect_to party_path(@party)
 
-     if @gist.save
+     else @visitor
 
-     
+       @gist = @visitor.gists.build(gist_params)
 
-  
-  	  redirect_to profiles_path(@profile)
+        @gist.save    
 
-    else
+        redirect_to visitor_gists_path(:visitor_id => @visitor.id) 
 
     end
 
   end
-
 
   #def destroy
     
@@ -57,15 +46,25 @@ class GistsController < ApplicationController
 
   def gist_params
 
-    params.require(:gist).permit(:caption, :image, :visitor_id, :party_id)
+    params.require(:gist).permit(:caption, :image, :owner, :visitor_id, :party_id)
 
   end
 
-  def find_profile
+  def find_party
 
-      if params[:profile_id]
+      if params[:party_id]
 
-         @profile = Profile.find(params[:profile_id])
+         @party = Party.find(params[:party_id])
+
+      end
+  end
+
+
+  def find_visitor
+
+      if params[:visitor_id]
+
+         @visitor = Visitor.find(params[:visitor_id])
 
       end
   end

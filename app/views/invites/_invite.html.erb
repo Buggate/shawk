@@ -9,15 +9,20 @@
 		 <div class="invite_content">
 
 
-		 	   <div><%=link_to("{invite.notifications.count} - Invitation Notice", notifications_path ) %> </div><br>
+		 	     <select invite="invite_email">
 
+		 	     	<%= invite.each do |invite| %>
+			 
+			 	     <option value="<%= invite.email %>"><%= invite.email %></option>
 
-        
-  
-   </div>
+			 	       
+			 	       <% end%>
 
+                </select>
 
+         </div>
+
+ </div>
+
+  </div>
     
-</div>
-
-</div>

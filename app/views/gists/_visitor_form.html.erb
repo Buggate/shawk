@@ -1,0 +1,37 @@
+<%= form_for([@visitor, @gist, @visitor.gists.build]) do |f| %>
+  
+
+    <p>
+
+   <%= f.text_field :visitor_id, :value => @visitor.id %>
+
+   </p>
+
+    <p>
+    
+         <%= f.text_field :party_id, :value => @visitor.party.id %>
+
+   </p>
+
+   
+     <p>
+    
+    <%= f.hidden_field :owner, :value => @visitor.user.name %>
+    <%= f.label "", @visitor.user.name %>
+  
+    <%= f.label :picture %><br>
+    <%= f.file_field :image %>
+
+   <%= f.text_area :caption %>
+
+   </p>
+
+   <br>
+  <p>
+   <%= f.submit %>
+   </p>
+
+
+   <% end %>
+
+ 

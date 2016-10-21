@@ -6,18 +6,23 @@
        <div style="border-bottom: 1px solid lightgrey; padding-bottom: 0.5em">
 
 
-			  	 <figure>
+
+
+
+			<figure>
+
 				   <div>
 				     <%= image_tag party.picture.url(:medium) %>
+				     <h3><%= link_to (party.title), {:controller => 'parties', :party_id => party.id} %></h3>
 				   </div>
-				   <h3><%= link_to (party.title), "" %></h3>
-			     </figure>
+				   
+
+
+			 </figure>
 			   
     </div>
 
 </div>
-
-
 
 
 

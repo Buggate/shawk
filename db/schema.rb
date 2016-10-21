@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017160330) do
+ActiveRecord::Schema.define(version: 20161021160609) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "name"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20161017160330) do
     t.datetime "image_updated_at"
     t.integer  "visitor_id"
     t.integer  "party_id"
+    t.string   "owner"
     t.index ["party_id"], name: "index_gists_on_party_id", using: :btree
     t.index ["visitor_id"], name: "index_gists_on_visitor_id", using: :btree
   end

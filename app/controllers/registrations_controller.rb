@@ -39,6 +39,8 @@ class RegistrationsController < Devise::RegistrationsController
 
           else
 
+        
+
 
 
           end  

@@ -7,7 +7,7 @@
 <div>
   
 
- <%= form_for(:gist, :url => {:action => 'create', :user_id => current_user.id}, :html => { :multipart => true }) do |f| %>
+ <%= form_for(:gist, :url => {:action => 'create', :party_id => @party.id}, :html => { :multipart => true }) do |f| %>
  <%= render(:partial => "form", :locals => {:f => f}) %>
 
  <% end %>

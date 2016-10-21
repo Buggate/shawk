@@ -1,0 +1,27 @@
+<%= form_for([@party, @party.gists.build]) do |f| %>
+
+    <p>
+
+      <%= f.hidden_field :party_id, :value => @party.id %>
+
+   </p>
+
+   
+   <p>
+    
+  
+   <%= f.hidden_field :owner, :value => @party.user.name %>
+   <%= f.label "", @party.user.name %>
+    <%= f.label :picture %><br>
+    <%= f.file_field :image %>
+
+   <%= f.text_area :caption %>
+
+   </p>
+   <br>
+  <p>
+   <%= f.submit %>
+   </p>
+
+
+<% end %>
