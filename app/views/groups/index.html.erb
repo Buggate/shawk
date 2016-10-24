@@ -10,12 +10,12 @@
 
                 <h4 class="host"><%= group.party.user.name %></h4>
           	   	<h4 class="party"><%= group.party.title if group.party %></h4>
-          	   	<h2 class="name"><%= group.name  %></h2>
+          	   	
 
           	   	<p class="date"><%= group.created_at.strftime("%B, %d, %Y") %></p>
 
       	   	  
-               <%= link_to("#{group.name} - Guest I.V ", {:action => 'show', :id => group.id, :party_id => @party.id}, :class => 'action show') %>
+               <h3><%= link_to("#{group.name}", {:action => 'show', :id => group.id, :party_id => @party.id}, :class => 'action show') %></h3>
               
          </div>
      	

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "shawk" %></title>
+
+  
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+  </head>
+
+   <!-- Header -->
+      <section id="header">
+        <div class="inner">
+          <span class="icon major fa-cloud"></span>
+
+  <body>
+  <div id="main_content">
+
+
+                <% if user_signed_in? %>
+               
+                <% else %>
+                <div class="buttons">
+                  <button class="button"><%= link_to "Sign up", new_user_registration_path %></button>
+                  <button class="button"><%= link_to 'Sign in', new_user_session_path %></button>
+
+              <% end %>
+            
+             </div>
+
+             <% flash.each do |name, msg| %>
+               <%= content_tag(:div, msg, class: "alert") %>
+
+                <% end %>
+          <h1>Welcome to<strong>Shawk</strong>, Demo Page<br />
+          This is going to be my Template testing project <%= link_to 'Source code', "http://html5up.net" %>.</h1>
+          <p><%= yield %></p>
+          <ul class="actions">
+            <li><a href="#one" class="button scrolly">Discover</a></li>
+          </ul>
+        </div>
+
+        </section>
+        
+  </body>
+</html>
+
+
+
+
+
+          
+
+         

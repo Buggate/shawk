@@ -60,6 +60,10 @@ group :development do
 
   gem 'bootstrap', '~> 4.0.0.alpha3'
 
+  gem 'foundation-rails', '~> 5.5', '>= 5.5.3.2'
+
+  gem 'simple_form', '~> 3.2', '>= 3.2.1'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

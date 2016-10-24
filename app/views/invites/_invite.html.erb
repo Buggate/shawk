@@ -8,17 +8,7 @@
      
 		 <div class="invite_content">
 
-
-		 	     <select invite="invite_email">
-
-		 	     	<%= invite.each do |invite| %>
-			 
-			 	     <option value="<%= invite.email %>"><%= invite.email %></option>
-
-			 	       
-			 	       <% end%>
-
-                </select>
+             <%= render 'invite/form' %>
 
          </div>
 
@@ -26,3 +16,4 @@
 
   </div>
     
+

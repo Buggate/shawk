@@ -1,12 +1,15 @@
 
+<%= form_for([@group, @invite, @group.invites.build({:group_id => @group.id, :host_id => @group.party.user_id })]) do |f| %>
+
+ 
 <p>
    
-    <%= f.text_field(:group_id, :value => @group.id) %>
+    <%= f.hidden_field(:group_id, :value => @group.id) %>
 </p>
 
 <p>
    
-    <%= f.text_field(:host_id, :value => @group.party.user_id) %>
+    <%= f.hidden_field(:host_id, :value => @group.party.user_id) %>
 </p>
 
 
@@ -25,3 +28,5 @@
  <div class="form-group">
     <%= f.submit 'Invite a Guest' %>
  </div>
+
+<% end %>

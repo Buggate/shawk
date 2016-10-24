@@ -3,14 +3,8 @@
 
 	<%= link_to("<< Groups", {:action => 'index', :party_id => @party.id}, :class => 'back-link') %>
 
-
-   <h1>New Group</h1>
-
-
-
-
 <div class="groups new">
-  <h2>Create Group</h2>
+ 
 
  <%= form_for(:group, :url => {:action => 'create', :party_id => @party.id }) do |f| %>
  <%= render(:partial => "form", :locals => {:f => f}) %>

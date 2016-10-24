@@ -1,0 +1,17 @@
+
+
+<div id="page_wrapper">
+
+	
+		<h1>Edit Party</h1>
+
+
+
+		 <%= form_for(:party, :url => {:action => 'update', :id => @party.id, :user_id => current_user.id}) do |f| %>
+
+
+		    <%= render(:partial => "form", :locals => {:f => f}) %>
+
+		 <% end %>
+
+</div>

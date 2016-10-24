@@ -19,12 +19,7 @@
 
 <p class="date">
 <p>Submitted <%= time_ago_in_words(@party.created_at) %> Ago
-  <% if user_signed_in? %>
- | <%= link_to 'Edit', edit_party_path(@party) %>
- | <%= link_to 'Destroy', @party, method: :delete, data: { confirm: 'Are you sure?' } %>
-
  
-<% end %>
 </p>
 
 </p>

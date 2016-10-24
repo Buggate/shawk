@@ -7,9 +7,9 @@
 
 			  	 <figure>
 				   <div>
-				     <%= image_tag visitor.party.picture.url(:medium) %>
+				     <%= image_tag visitor.party.picture.url(:medium) if visitor.party %>
 				   </div>
-				   <h3><%= link_to (visitor.party.title), visitor_gists_path(:visitor_id => visitor.id) %></h3>
+				   <h3><%= link_to (visitor.party.title), visitor_gists_path(:visitor_id => visitor.id) if visitor.party  %></h3>
 			     </figure>
 			         
 

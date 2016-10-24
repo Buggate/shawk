@@ -39,8 +39,11 @@ class RegistrationsController < Devise::RegistrationsController
 
           else
 
-        
+            @newUser
 
+             set_flash_message :notice, :signed_up if is_navigational_format?
+              sign_in(@newUser)
+              respond_with @newUser, :location => after_sign_up_path_for(@newUser)
 
 
           end  

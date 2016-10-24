@@ -8,29 +8,29 @@
     <%= hidden_field_tag :invite_token, @token %>
   <% end %>
 
+
+
   <div class="field">
-    <%= f.label :name %><br />
+   
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
+
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, :value => @email, autofocus: true %>
   </div>
 
-  <div class="field">
+   <div class="form-group">
     <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, required: true %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, required: true %>
   </div>
-
 
   <div class="actions">
     <%= f.submit "Enjoy !!!" %>
@@ -40,4 +40,3 @@
 
 
 </div>
-

@@ -1,6 +1,6 @@
 <div id="page_wrapper">
 
-  <h2><%= link_to "mY HomePage", profiles_path  %></h2>
+ 
 
 
   <div id="page_wrapper">
@@ -9,7 +9,7 @@
 
 
 <b>Host</b> &nbsp <%= @group.party.user.name %> &nbsp | &nbsp
- <b>Party</b> &nbsp <%= @group.party.title %>
+ <b>Party</b> &nbsp <%=link_to @group.party.title, groups_path(:party_id => @group.party.id) %>
 
      
 
@@ -33,7 +33,7 @@
 
          <% @page_title = "Show Group" %>
 
-         <h2><%= link_to("Invite Guests", {:controller => 'invites', :action => 'index', :group_id => @group.id}, :class => 'action new') %></h2>
+         <h2><%= render 'invites/form' %></h2>
 
   </div>
        

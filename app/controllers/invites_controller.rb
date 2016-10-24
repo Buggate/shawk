@@ -77,7 +77,8 @@ def create
                
          
                flash[:notice] = "Invitation Sent successfully."
-               redirect_to(:action => 'index', :group_id => @group.id)
+
+               redirect_to group_path(@group)
        
           else
 
@@ -89,7 +90,8 @@ def create
 
 
                flash[:notice] = "Invitation Sent successfully."
-               redirect_to(:action => 'index', :group_id => @group.id)
+
+               redirect_to group_path(@group)
        
         
           end

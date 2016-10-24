@@ -27,6 +27,8 @@ end
 
     resources :comments
 
+    resources :invites
+
   end
 
    
@@ -48,7 +50,7 @@ end
 
   
 
-  resources :invites
+
 
   
 

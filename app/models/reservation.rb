@@ -18,6 +18,13 @@ class Reservation < ApplicationRecord
 
     #before_save :check_accept
 
+
+    before_save do
+
+        self.rsvp.gsub!(/[\[\]\"]/, "") if attribute_present?("rsvp")
+
+      end
+
 	    belongs_to :group
 	
       belongs_to :visitor
